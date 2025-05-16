@@ -1,0 +1,50 @@
+REST API:
+	- Used to help systems/softwares communicate
+		- usually through JSON
+	- GET & POST data
+	- Communication:
+		- usually one way - client requests the server
+			- server(backend): gives the data
+			- client(frontend): requests the data
+		- retrieved through endpoints !! (ie, domain.com/drinks)
+		
+	- VERB /URI
+	- Headers = metadata about the request
+		- Accept - for format
+		- authorization
+	- Body
+		
+Insomnia: app to help track API endpoints
+
+import requests, json - to get endpoints and use data
+	- requests allows us to make requests to get the endpoints we want (ie, response = request.get(url))
+	- json builds json out of the data (ie, response.json())
+		- get list of all the items (response.json()['json_name'])
+		- iterate over the json and get a specific attribute from each data point (for data in response.json(['json_name']): print (data['title]) print (data['link']))
+		
+create venv to isolate dependencies
+	- python3 -m venv .venv
+	- source .venv/bin/activate
+	- pip3 install whatever
+		- fastapi/flask
+	- pip3 freeze > requirements.txt
+	
+ROUTES
+	- give route a path
+		@app.get(path)
+	- set up method that will be called when that path is hit
+		def index(): return "Hello!"
+	- set up parameter in path with <> or :
+	
+MIDDLEWARE
+	- where the data passes through
+		- CORS
+	
+SETUP
+	- backend
+		- services: all the client services that use the API of the said service
+			- ie, reddit_client.py: handles passing the API token & fetching the wanted information from reddit db
+		- routers: all the routes in web app that will call specific /services functions
+			- ie, reddit.py: uses functions from reddit_client.py to get the reddit data but also will be used by frontend to display on web app
+		- utils: different tools for processing the data
+		- main.py: handles fastAPI app setup

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+		<title>getgetget</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		%sveltekit.head%
+	</head>
+
+	<header>
+		<h4><a href='http://localhost:5173'>getgetget</a></h4>
+	</header>
+
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+
+	<style>
+		header {
+			position: absolute;
+			color: blue;
+			top: 10px;
+			left: 35px;
+		}
+
+		a {
+			text-decoration: none;
+			color: blue;
+		}
+
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			margin-top: 15%;
+			font-family: 'Outfit', monospace;
+			font-size: 24px;
+    	}
+
+		button, input {
+			font-family: 'Outfit', monospace;
+			font-size: 20px;
+		}
+
+		button {
+			color: white;
+			background-color: blue;
+			border: blue 2px;
+			cursor: pointer;
+    	}
+
+    	button:hover {
+        	border: 5px;
+        	color: black;
+		}
+	</style>
+</html>
